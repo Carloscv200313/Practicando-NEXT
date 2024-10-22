@@ -1,5 +1,6 @@
-
+//import { notFound } from 'next/navigation';
 import { CartsPokemon } from '../components/carts-pokemon/cartsPokemon';
+
 export interface Pokemones {
     count: string;
     next: string;
@@ -26,7 +27,8 @@ const pokemones = async (): Promise<Pokemon[]> => {
         id: pokemon.url.split('/').at(-2)!, // Extrae el ID del URL
         name: pokemon.name
     }));
-
+    //throw notFound() //Manda error 500
+    //throw new Error('Not found')
     return pokemone; // Retorna un array de Pokémones
 };
 
